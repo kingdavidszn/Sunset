@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining - Sunset Hotel & Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .dining-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .dining-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .restaurants-section {
+            padding: 5rem 5%;
+        }
+
+        .restaurant {
+            margin-bottom: 5rem;
+        }
+
+        .restaurant-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .restaurant-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .restaurant-image {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .restaurant-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .restaurant-info {
+            padding: 2rem;
+        }
+
+        .restaurant-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .restaurant-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .restaurant-feature {
+            background: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .restaurant-hours {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .restaurant-hours p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-preview {
+            margin-top: 2rem;
+        }
+
+        .menu-preview h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .menu-item span:last-child {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .reservation-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .reservation-btn:hover {
+            background: #d35400;
+        }
+
+        @media (max-width: 768px) {
+            .dining-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .restaurant-content {
+                grid-template-columns: 1fr;
+            }
+
+            .restaurant-image {
+                height: 300px;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sunset</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="dining.html" class="active">Dining</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="book-now">
+            <button>Book Now</button>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Dining Hero Section -->
+    <section class="dining-hero">
+        <div class="hero-content">
+            <h1>Culinary Excellence</h1>
+            <p>Experience world-class dining at its finest</p>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants-section">
+        <div class="restaurant">
+            <div class="restaurant-header">
+                <h2>Fine Dining</h2>
+            </div>
+            <div class="restaurant-content">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3" alt="Fine Dining Restaurant">
+                </div>
+                <div class="restaurant-info">
+                    <h3>Sunset Restaurant</h3>
+                    <p>Experience culinary excellence at our signature restaurant, where our award-winning chefs create unforgettable dining experiences using the finest local ingredients.</p>
+                    <div class="restaurant-features">
+                        <span class="restaurant-feature">Fine Dining</span>
+                        <span class="restaurant-feature">Ocean View</span>
+                        <span class="restaurant-feature">Wine Pairing</span>
+                    </div>
+                    <div class="menu-preview">
+                        <h4>Signature Dishes</h4>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span>Lobster Thermidor</span>
+                                <span>$45</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Wagyu Beef Tenderloin</span>
+                                <span>$65</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Seafood Risotto</span>
+                                <span>$38</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Chocolate Soufflé</span>
+                                <span>$18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-hours">
+                        <p><span>Dinner:</span> 6:00 PM - 10:00 PM</p>
+                        <p><span>Sunday Brunch:</span> 11:00 AM - 3:00 PM</p>
+                    </div>
+                    <a href="#" class="reservation-btn">Make a Reservation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant">
+            <div class="restaurant-header">
+                <h2>Casual Dining</h2>
+            </div>
+            <div class="restaurant-content">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3" alt="Casual Dining Restaurant">
+                </div>
+                <div class="restaurant-info">
+                    <h3>Beachside Grill</h3>
+                    <p>Enjoy casual dining with a stunning ocean view. Our beachside grill offers fresh seafood, grilled specialties, and refreshing cocktails in a relaxed atmosphere.</p>
+                    <div class="restaurant-features">
+                        <span class="restaurant-feature">Casual Dining</span>
+                        <span class="restaurant-feature">Beach View</span>
+                        <span class="restaurant-feature">Live Music</span>
+                    </div>
+                    <div class="menu-preview">
+                        <h4>Popular Items</h4>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span>Grilled Sea Bass</span>
+                                <span>$32</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Beach Burger</span>
+                                <span>$18</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Fish Tacos</span>
+                                <span>$24</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Mango Mojito</span>
+                                <span>$12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-hours">
+                        <p><span>Lunch:</span> 12:00 PM - 4:00 PM</p>
+                        <p><span>Dinner:</span> 5:00 PM - 9:00 PM</p>
+                    </div>
+                    <a href="#" class="reservation-btn">Make a Reservation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant">
+            <div class="restaurant-header">
+                <h2>Poolside Bar</h2>
+            </div>
+            <div class="restaurant-content">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-4.0.3" alt="Poolside Bar">
+                </div>
+                <div class="restaurant-info">
+                    <h3>Sunset Bar</h3>
+                    <p>Relax by the pool with our selection of refreshing cocktails, light bites, and tropical drinks. Perfect for a casual afternoon or evening gathering.</p>
+                    <div class="restaurant-features">
+                        <span class="restaurant-feature">Poolside</span>
+                        <span class="restaurant-feature">Cocktails</span>
+                        <span class="restaurant-feature">Light Bites</span>
+                    </div>
+                    <div class="menu-preview">
+                        <h4>Signature Drinks</h4>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span>Sunset Margarita</span>
+                                <span>$14</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Tropical Punch</span>
+                                <span>$12</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Poolside Mojito</span>
+                                <span>$13</span>
+                            </div>
+                            <div class="menu-item">
+                                <span>Fresh Coconut</span>
+                                <span>$10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-hours">
+                        <p><span>Daily:</span> 10:00 AM - 8:00 PM</p>
+                    </div>
+                    <a href="#" class="reservation-btn">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sunset Hotel</h3>
+                <p>123 Paradise Avenue<br>Miami, FL 33101</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567<br>Email: info@sunset.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sunset Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

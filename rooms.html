@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Sunset Hotel & Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .rooms-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .rooms-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .room-categories {
+            padding: 5rem 5%;
+        }
+
+        .room-category {
+            margin-bottom: 5rem;
+        }
+
+        .room-category h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover .room-image img {
+            transform: scale(1.1);
+        }
+
+        .room-details {
+            padding: 2rem;
+        }
+
+        .room-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .room-features {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .room-feature {
+            background: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .room-price {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+
+        .room-amenities {
+            margin: 1rem 0;
+        }
+
+        .room-amenities ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .room-amenities li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .room-amenities i {
+            color: var(--secondary-color);
+        }
+
+        .book-now-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .book-now-btn:hover {
+            background: #d35400;
+        }
+
+        @media (max-width: 768px) {
+            .rooms-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .room-amenities ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sunset</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html" class="active">Rooms</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="dining.html">Dining</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="book-now">
+            <button>Book Now</button>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Rooms Hero Section -->
+    <section class="rooms-hero">
+        <div class="hero-content">
+            <h1>Our Luxurious Rooms</h1>
+            <p>Experience comfort and elegance in every detail</p>
+        </div>
+    </section>
+
+    <!-- Room Categories -->
+    <section class="room-categories">
+        <div class="room-category">
+            <h2>Deluxe Rooms</h2>
+            <div class="room-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3" alt="Deluxe Room">
+                    </div>
+                    <div class="room-details">
+                        <h3>Deluxe King Room</h3>
+                        <div class="room-features">
+                            <span class="room-feature">King Bed</span>
+                            <span class="room-feature">Ocean View</span>
+                            <span class="room-feature">45m²</span>
+                        </div>
+                        <div class="room-amenities">
+                            <ul>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                <li><i class="fas fa-tv"></i> Smart TV</li>
+                                <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                <li><i class="fas fa-coffee"></i> Mini Bar</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">$299 / night</div>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3" alt="Deluxe Twin Room">
+                    </div>
+                    <div class="room-details">
+                        <h3>Deluxe Twin Room</h3>
+                        <div class="room-features">
+                            <span class="room-feature">Twin Beds</span>
+                            <span class="room-feature">Garden View</span>
+                            <span class="room-feature">40m²</span>
+                        </div>
+                        <div class="room-amenities">
+                            <ul>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                <li><i class="fas fa-tv"></i> Smart TV</li>
+                                <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                <li><i class="fas fa-coffee"></i> Mini Bar</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">$279 / night</div>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-category">
+            <h2>Suites</h2>
+            <div class="room-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3" alt="Executive Suite">
+                    </div>
+                    <div class="room-details">
+                        <h3>Executive Suite</h3>
+                        <div class="room-features">
+                            <span class="room-feature">King Bed</span>
+                            <span class="room-feature">Ocean View</span>
+                            <span class="room-feature">65m²</span>
+                        </div>
+                        <div class="room-amenities">
+                            <ul>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                <li><i class="fas fa-tv"></i> Smart TV</li>
+                                <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                <li><i class="fas fa-coffee"></i> Mini Bar</li>
+                                <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                <li><i class="fas fa-couch"></i> Living Room</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">$499 / night</div>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3" alt="Presidential Suite">
+                    </div>
+                    <div class="room-details">
+                        <h3>Presidential Suite</h3>
+                        <div class="room-features">
+                            <span class="room-feature">King Bed</span>
+                            <span class="room-feature">Panoramic View</span>
+                            <span class="room-feature">100m²</span>
+                        </div>
+                        <div class="room-amenities">
+                            <ul>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                <li><i class="fas fa-tv"></i> Smart TV</li>
+                                <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                <li><i class="fas fa-coffee"></i> Mini Bar</li>
+                                <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                <li><i class="fas fa-couch"></i> Living Room</li>
+                                <li><i class="fas fa-utensils"></i> Private Dining</li>
+                                <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">$899 / night</div>
+                        <button class="book-now-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sunset Hotel</h3>
+                <p>123 Paradise Avenue<br>Miami, FL 33101</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567<br>Email: info@sunset.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sunset Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

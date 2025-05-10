@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset Hotel & Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script>
+        // Initialize GSAP plugins
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    </script>
+    <style>
+        /* These styles fix the initial loading state */
+        .hero-content h1, .hero-content p, .cta-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Once JS loads, we'll add .js-enabled to body and these will take effect */
+        body.js-enabled .hero-content h1, 
+        body.js-enabled .hero-content p, 
+        body.js-enabled .cta-button {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading animation -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sunset</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="dining.html">Dining</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="book-now">
+            <button>Book Now</button>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Sunset Hotel</h1>
+            <p>Experience luxury and comfort in paradise</p>
+            <button class="cta-button">Explore Rooms</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card animate-on-scroll">
+            <i class="fas fa-concierge-bell"></i>
+            <h3>24/7 Service</h3>
+            <p>Round-the-clock concierge and room service for your comfort</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+            <i class="fas fa-spa"></i>
+            <h3>Spa & Wellness</h3>
+            <p>Rejuvenate your body and mind with our premium spa services</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+            <i class="fas fa-utensils"></i>
+            <h3>Fine Dining</h3>
+            <p>Experience culinary excellence at our award-winning restaurants</p>
+        </div>
+    </section>
+
+    <!-- Rooms Preview Section -->
+    <section class="rooms">
+        <h2>Our Luxurious Rooms</h2>
+        <p class="section-intro">Discover our carefully curated collection of rooms and suites, each designed to provide an unforgettable stay with breathtaking views and premium amenities.</p>
+        <div class="room-grid">
+            <div class="room-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Deluxe Room">
+                <div class="room-info">
+                    <h3>Deluxe Room</h3>
+                    <p>Experience unparalleled comfort in our spacious Deluxe Rooms, featuring modern amenities and breathtaking views of the ocean or city skyline.</p>
+                    <div class="price">From $299/night</div>
+                    <div class="amenities">
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                        <span><i class="fas fa-tv"></i> Smart TV</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="room-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Executive Suite">
+                <div class="room-info">
+                    <h3>Executive Suite</h3>
+                    <p>Indulge in luxury with our Executive Suites, featuring a separate living area, premium services, and exclusive access to the executive lounge.</p>
+                    <div class="price">From $499/night</div>
+                    <div class="amenities">
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                        <span><i class="fas fa-tv"></i> Smart TV</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                        <span><i class="fas fa-glass-martini-alt"></i> Mini Bar</span>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="room-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Presidential Suite">
+                <div class="room-info">
+                    <h3>Presidential Suite</h3>
+                    <p>The epitome of luxury living with panoramic views, private terrace, and dedicated butler service. Perfect for those seeking the ultimate experience.</p>
+                    <div class="price">From $999/night</div>
+                    <div class="amenities">
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                        <span><i class="fas fa-tv"></i> Smart TV</span>
+                        <span><i class="fas fa-snowflake"></i> AC</span>
+                        <span><i class="fas fa-glass-martini-alt"></i> Mini Bar</span>
+                        <span><i class="fas fa-concierge-bell"></i> Butler</span>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Founded in 1995, Sunset Hotel & Resort has been a beacon of luxury and hospitality for nearly three decades. What began as a small boutique hotel has blossomed into one of Miami's most prestigious destinations, known for its exceptional service and stunning oceanfront location.</p>
+                    <p>Our journey began with a simple vision: to create a haven where guests could experience the perfect blend of comfort, elegance, and authentic hospitality. Over the years, we've hosted countless memorable moments, from romantic getaways to grand celebrations, each adding to our rich tapestry of stories.</p>
+                    <p>Today, Sunset Hotel stands as a testament to timeless luxury, having undergone several thoughtful renovations while preserving its classic charm. Our commitment to excellence has earned us numerous accolades, including the prestigious "Best Luxury Hotel" award for five consecutive years.</p>
+                    <p>As we look to the future, we remain dedicated to providing our guests with unforgettable experiences, maintaining the perfect balance between modern amenities and classic elegance that has become our signature.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">28</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Luxury Rooms</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Award-Winning Restaurants</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Premium Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sunset Hotel</h3>
+                <p>123 Paradise Avenue<br>Miami, FL 33101</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567<br>Email: info@sunset.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sunset Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Flag that JS is enabled right at the start
+        document.body.classList.add('js-enabled');
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities - Sunset Hotel & Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .amenities-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .amenities-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenities-section {
+            padding: 5rem 5%;
+        }
+
+        .amenity-category {
+            margin-bottom: 5rem;
+        }
+
+        .amenity-category h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .amenity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .amenity-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .amenity-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .amenity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-card:hover .amenity-image img {
+            transform: scale(1.1);
+        }
+
+        .amenity-details {
+            padding: 2rem;
+        }
+
+        .amenity-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-details p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .amenity-feature {
+            background: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .amenity-hours {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .amenity-hours p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .amenities-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sunset</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="amenities.html" class="active">Amenities</a>
+            <a href="dining.html">Dining</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="book-now">
+            <button>Book Now</button>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Amenities Hero Section -->
+    <section class="amenities-hero">
+        <div class="hero-content">
+            <h1>Hotel Amenities</h1>
+            <p>Discover luxury and comfort at every corner</p>
+        </div>
+    </section>
+
+    <!-- Amenities Sections -->
+    <section class="amenities-section">
+        <div class="amenity-category">
+            <h2>Wellness & Spa</h2>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3" alt="Spa">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Sunset Spa</h3>
+                        <p>Indulge in a world of relaxation with our premium spa services. Experience rejuvenating treatments and massages.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">Massage</span>
+                            <span class="amenity-feature">Facial</span>
+                            <span class="amenity-feature">Body Treatment</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>Monday - Friday:</span> 9:00 AM - 8:00 PM</p>
+                            <p><span>Saturday - Sunday:</span> 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3" alt="Fitness Center">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Fitness Center</h3>
+                        <p>Stay active during your stay with our state-of-the-art fitness equipment and personal training services.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">Cardio</span>
+                            <span class="amenity-feature">Weights</span>
+                            <span class="amenity-feature">Yoga Studio</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>Daily:</span> 24 Hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="amenity-category">
+            <h2>Recreation</h2>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-4.0.3" alt="Swimming Pool">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Infinity Pool</h3>
+                        <p>Enjoy our stunning infinity pool overlooking the ocean. Perfect for relaxation and recreation.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">Pool Bar</span>
+                            <span class="amenity-feature">Sun Deck</span>
+                            <span class="amenity-feature">Pool Service</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>Daily:</span> 7:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3" alt="Beach Access">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Private Beach</h3>
+                        <p>Exclusive beach access with premium amenities and services for our guests.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">Beach Chairs</span>
+                            <span class="amenity-feature">Umbrellas</span>
+                            <span class="amenity-feature">Water Sports</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>Daily:</span> 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="amenity-category">
+            <h2>Business Services</h2>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3" alt="Business Center">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Business Center</h3>
+                        <p>Fully equipped business center with all the facilities you need for work.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">Printing</span>
+                            <span class="amenity-feature">Meeting Rooms</span>
+                            <span class="amenity-feature">High-Speed Internet</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>Daily:</span> 24 Hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-image">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3" alt="Conference Facilities">
+                    </div>
+                    <div class="amenity-details">
+                        <h3>Conference Facilities</h3>
+                        <p>State-of-the-art conference rooms and event spaces for meetings and special occasions.</p>
+                        <div class="amenity-features">
+                            <span class="amenity-feature">AV Equipment</span>
+                            <span class="amenity-feature">Catering</span>
+                            <span class="amenity-feature">Event Planning</span>
+                        </div>
+                        <div class="amenity-hours">
+                            <p><span>By Appointment</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sunset Hotel</h3>
+                <p>123 Paradise Avenue<br>Miami, FL 33101</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567<br>Email: info@sunset.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sunset Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
